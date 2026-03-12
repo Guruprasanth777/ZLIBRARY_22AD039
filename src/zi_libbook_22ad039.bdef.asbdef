@@ -1,0 +1,17 @@
+unmanaged implementation in class zbp_i_libbook_22ad039 unique;
+strict ( 1 );
+
+define behavior for ZI_LIBBOOK_22AD039 alias Book
+lock master
+authorization master ( instance )
+{
+  create;
+  update;
+  delete;
+
+  field ( mandatory : create ) book_id;
+  field ( readonly : update ) book_id;
+
+  // No "mapping for" is required in unmanaged because you
+  // handle the mapping in your ABAP class methods.
+}
